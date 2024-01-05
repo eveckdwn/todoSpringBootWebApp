@@ -1,6 +1,6 @@
 package todoapp.core.user.application;
 
-import todoapp.core.user.domain.User;
+import todoapp.core.user.domain.Users;
 
 /**
  * 사용자 가입기 인터페이스
@@ -17,6 +17,6 @@ public interface UserRegistration {
      * @param rawPassword 비밀번호
      * @return 사용자 개체
      */
-    User join(String username, String rawPassword);
+    Users join(String username, String rawPassword);
 
 }

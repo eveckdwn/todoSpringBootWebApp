@@ -1,7 +1,7 @@
 package todoapp.core.todos.application;
 
 import todoapp.core.todos.domain.Todo;
-import todoapp.core.user.domain.User;
+import todoapp.core.user.domain.Users;
 
 import java.util.List;
 
@@ -20,6 +20,6 @@ public interface PersonalTodoFinder {
      * @param user 사용자 개체
      * @return List<Todo> 개체
      */
-    List<Todo> getAll(User user);
+    List<Todo> getAll(Users user);
 
 }

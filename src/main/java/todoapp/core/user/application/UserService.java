@@ -25,15 +25,15 @@ public class UserService implements UserPasswordVerifier, UserRegistration, Prof
         this.passwordEncoder = passwordEncoder;
     }
 
-    public User verify(String username, String rawPassword) {
+    public Users verify(String username, String rawPassword) {
         return userRepository.findByUsername(username)
                              .orElseThrow(() -> new UserEntityNotFoundException(username))
                              .verifyPassword(passwordEncoder.encode(rawPassword));
     }
 
-    public User join(String username, String rawPassword) {
+    public Users join(String username, String rawPassword) {
         return userRepository.findByUsername(username).orElseGet(() -> {
-            User user = userRepository.save(new User(username, passwordEncoder.encode(rawPassword)));
+            Users user = userRepository.save(new Users(username, passwordEncoder.encode(rawPassword)));
             log.info("new user joining: {}", user);
 
             return user;
@@ -41,7 +41,7 @@ public class UserService implements UserPasswordVerifier, UserRegistration, Prof
     }
 
     @Override
-    public User change(String username, ProfilePicture profilePicture) {
+    public Users change(String username, ProfilePicture profilePicture) {
         return userRepository.findByUsername(username)
                              .orElseThrow(() -> new UserEntityNotFoundException(username))
                              .changeProfilePicture(profilePicture);

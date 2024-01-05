@@ -16,7 +16,7 @@ public interface UserRepository {
      * @param username 사용자 이름
      * @return Optional<User> 개체
      */
-    Optional<User> findByUsername(String username);
+    Optional<Users> findByUsername(String username);
 
     /**
      * 저장소에 사용자 개체를 저장한다.
@@ -24,6 +24,6 @@ public interface UserRepository {
      * @param user 사용자 개체
      * @return 저장된 사용자 개체
      */
-    User save(User user);
+    Users save(Users user);
 
 }

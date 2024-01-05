@@ -1,6 +1,6 @@
 package todoapp.core.todos.application;
 
-import todoapp.core.user.domain.User;
+import todoapp.core.user.domain.Users;
 
 /**
  * 할 일 편집기 인터페이스
@@ -17,7 +17,7 @@ public interface PersonalTodoEditor {
      * @param title 할 일
      * @return 생성된 할 일 개체
      */
-    void create(User user, String title);
+    void create(Users user, String title);
 
     /**
      * 해당 할 일 번호로 등록된 할 일을 변경한다.
@@ -28,7 +28,7 @@ public interface PersonalTodoEditor {
      * @param completed 완료여부
      * @return 변경된 할 일 개체
      */
-    void update(User user, Long id, String title, boolean completed);
+    void update(Users user, Long id, String title, boolean completed);
 
     /**
      * 해당 할 일 번호로 등록된 할 일을 삭제한다.
@@ -37,6 +37,6 @@ public interface PersonalTodoEditor {
      * @param id 할 일 번호
      * @return 삭제된 할 일 개체
      */
-    void delete(User user, Long id);
+    void delete(Users user, Long id);
 
 }

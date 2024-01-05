@@ -1,6 +1,6 @@
 package todoapp.security;
 
-import todoapp.core.user.domain.User;
+import todoapp.core.user.domain.Users;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -16,10 +16,10 @@ public class UserSession {
 
     public static final String ROLE_USER = "ROLE_USER";
 
-    private final User user;
+    private final Users user;
     private final Set<String> roles = new HashSet<>();
 
-    public UserSession(User user) {
+    public UserSession(Users user) {
         this.user = Objects.requireNonNull(user, "user object must be not null");
         this.roles.add(ROLE_USER);
     }
@@ -28,7 +28,7 @@ public class UserSession {
         return user.getUsername();
     }
 
-    public User getUser() {
+    public Users getUser() {
         return user;
     }
 

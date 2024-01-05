@@ -1,6 +1,6 @@
 package todoapp.web.model;
 
-import todoapp.core.user.domain.User;
+import todoapp.core.user.domain.Users;
 
 import java.util.Objects;
 
@@ -14,9 +14,9 @@ public class UserProfile {
     private static final String DEFAULT_PROFILE_PICTURE_URL = "/assets/img/profile-picture.png";
     private static final String USER_PROFILE_PICTURE_URL = "/user/profile-picture";
 
-    private User user;
+    private Users user;
 
-    public UserProfile(User user) {
+    public UserProfile(Users user) {
         this.user = Objects.requireNonNull(user, "user object must be not null");
     }
 

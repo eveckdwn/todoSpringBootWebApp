@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository;
 
 import todoapp.Constant;
 import todoapp.core.user.domain.PasswordEncoder;
-import todoapp.core.user.domain.User;
+import todoapp.core.user.domain.Users;
 import todoapp.core.user.domain.UserRepository;
 
 /**
@@ -27,7 +27,7 @@ import todoapp.core.user.domain.UserRepository;
 public class InMemoryUserRepository implements UserRepository, ApplicationRunner {
 
     private final PasswordEncoder passwordEncoder;
-    private final List<User> users = new CopyOnWriteArrayList<>();
+    private final List<Users> users = new CopyOnWriteArrayList<>();
     private final Logger log = LoggerFactory.getLogger(InMemoryUserRepository.class);
     
     public InMemoryUserRepository(PasswordEncoder passwordEncoder) {
@@ -35,19 +35,19 @@ public class InMemoryUserRepository implements UserRepository, ApplicationRunner
     }
 
     @Override
-    public Optional<User> findByUsername(String username) {
+    public Optional<Users> findByUsername(String username) {
         return users.stream().filter(user -> Objects.equals(user.getUsername(), username)).findAny();
     }
 
     @Override
-    public User save(User user) {
+    public Users save(Users user) {
         users.add(user);
         return user;
     }
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        save(new User("user", passwordEncoder.encode("password")));
+        save(new Users("user", passwordEncoder.encode("password")));
         log.info("신규 사용자를 등록합니다. (username: user, password: password)");
     }
 

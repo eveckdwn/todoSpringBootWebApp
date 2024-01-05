@@ -1,7 +1,7 @@
 package todoapp.core.user.application;
 
 import todoapp.core.user.domain.ProfilePicture;
-import todoapp.core.user.domain.User;
+import todoapp.core.user.domain.Users;
 
 /**
  * 사용자 프로필 이미지 변경기 인터페이스
@@ -17,6 +17,6 @@ public interface ProfilePictureChanger {
      * @param profilePicture 프로필 이미지 개체
      * @return 변경 대상 사용자 개체
      */
-    User change(String username, ProfilePicture profilePicture);
+    Users change(String username, ProfilePicture profilePicture);
 
 }

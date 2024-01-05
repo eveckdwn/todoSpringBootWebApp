@@ -1,6 +1,6 @@
 package todoapp.core.user.application;
 
-import todoapp.core.user.domain.User;
+import todoapp.core.user.domain.Users;
 import todoapp.core.user.domain.UserPasswordNotMatchedException;
 
 /**
@@ -18,6 +18,6 @@ public interface UserPasswordVerifier {
      * @param rawPassword 비밀번호
      * @return 사용자 개체
      */
-    User verify(String username, String rawPassword) throws UserPasswordNotMatchedException;
+    Users verify(String username, String rawPassword) throws UserPasswordNotMatchedException;
 
 }

@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import todoapp.Constant;
-import todoapp.core.user.domain.User;
+import todoapp.core.user.domain.Users;
 import todoapp.core.user.domain.UserRepository;
 
 /**
@@ -14,6 +14,6 @@ import todoapp.core.user.domain.UserRepository;
  */
 @Profile(Constant.PROFILE_PRODUCTION)
 @Repository
-public interface JpaUserRepository extends UserRepository, JpaRepository<User, String> {
+public interface JpaUserRepository extends UserRepository, JpaRepository<Users, String> {
 
 }

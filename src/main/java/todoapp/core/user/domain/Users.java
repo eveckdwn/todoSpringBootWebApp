@@ -2,6 +2,7 @@ package todoapp.core.user.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+
 import java.util.Objects;
 
 /**
@@ -10,7 +11,7 @@ import java.util.Objects;
  * @author springrunner.kr@gmail.com
  */
 @Entity
-public class User {
+public class Users {
 
     @Id
     private String username;
@@ -19,10 +20,11 @@ public class User {
 
     // for hibernate
     @SuppressWarnings("unused")
-    public User() {
+    public Users() {
 
     }
-    public User(String username, String password) {
+
+    public Users(String username, String password) {
         setUsername(username);
         setPassword(password);
     }
@@ -61,7 +63,7 @@ public class User {
      * @param password 비교할 비밀번호
      * @return
      */
-    public User verifyPassword(String password) {
+    public Users verifyPassword(String password) {
         if (Objects.equals(getPassword(), password)) {
             return this;
         }
@@ -74,7 +76,7 @@ public class User {
      * @param profilePicture 변경할 프로필 이미지
      * @return
      */
-    public User changeProfilePicture(ProfilePicture profilePicture) {
+    public Users changeProfilePicture(ProfilePicture profilePicture) {
         setProfilePicture(profilePicture);
         return this;
     }
@@ -88,7 +90,7 @@ public class User {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
+        Users user = (Users) o;
         return Objects.equals(getUsername(), user.getUsername());
     }
 
