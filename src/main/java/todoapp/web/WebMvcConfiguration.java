@@ -37,7 +37,7 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
         //  클래스패스 경로에서 정적 자원 제공
         //  registry.addResourceHandler("/assets/**").addResourceLocations("classpath:assets/");
 
-        registry.addResourceHandler("/assets/**").addResourceLocations("assets/", "file:/Users/changjoosohn/IdeaProjects/todos/files/assets/", "classpath:assets/");
+        //  registry.addResourceHandler("/assets/**").addResourceLocations("assets/", "file:/Users/changjoosohn/IdeaProjects/todos/files/assets/", "classpath:assets/");
     }
 
     @Override
